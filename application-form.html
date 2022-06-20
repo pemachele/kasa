@@ -517,7 +517,10 @@
         href='wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min52d5.css?ver=5.15.3' media='all' />
     <link rel='stylesheet' id='elementor-icons-fa-brands-css'
         href='wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min52d5.css?ver=5.15.3' media='all' />
-    <script src='wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js'></script>
+    
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+   
+        <script src='wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js'></script>
     <script src='wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
     <link rel="https://api.w.org/" href="wp-json/index.html" />
     <link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/161.json" />
@@ -529,6 +532,7 @@
         href="wp-json/oembed/1.0/embed72a3.json?url=https%3A%2F%2Fmapleeducation.ca%2F" />
     <link rel="alternate" type="text/xml+oembed"
         href="wp-json/oembed/1.0/embedaf2f?url=https%3A%2F%2Fmapleeducation.ca%2F&amp;format=xml" />
+        
     <!-- Facebook Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -1062,6 +1066,9 @@
         #scroll-top:hover {
             background-color: #ff2b2b
         }
+        .contact__form-input{
+            margin-top: 10px;
+        }
 
         /* Header CSS */
         #site-header.has-header-media .overlay-header-media {
@@ -1394,9 +1401,9 @@
                                         
                                         
                                         
-                                                            <form method="post">
-                                                                <input id="csrf_token" name="csrf_token" type="hidden"
-                                                                    value="IjU5MTQ2YTEyMWMyMWY3MzdiOTczNjNiOGQ5NWMwMDYwNTYzNmY3Yzci.Yq2fkA.mA_v6lD5U_d3AdGyml0PlXAEAEE">
+                                                            <form  onsubmit="create_application()" id="application-form" method="post">
+                                                                <!-- <input id="csrf_token" name="csrf_token" type="hidden"
+                                                                    value="IjU5MTQ2YTEyMWMyMWY3MzdiOTczNjNiOGQ5NWMwMDYwNTYzNmY3Yzci.Yq2fkA.mA_v6lD5U_d3AdGyml0PlXAEAEE"> -->
                                                                 <h6>PERSONAL DETAILS</h6>
                                                                 <div class="row">
                                                                     <div class="col-xxl-6 col-xl-6 col-md-6">
@@ -1417,7 +1424,7 @@
                                                                     <div class="col-xxl-6 col-xl-6 col-md-6">
                                                                         <div class="contact__form-input">
                                                                             <input id="birth_date" name="birth_date" placeholder="Date of Birth" required=""
-                                                                                type="text" value="">
+                                                                                type="date" value="">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-xxl-6 col-xl-6 col-md-6">
@@ -1426,14 +1433,14 @@
                                                                                 type="text" value="">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-xxl-12">
+                                                                    <div class="col-xxl-6 col-xl-6 col-md-6">
                                                                         <div class="contact__form-input">
-                                                                            <input id="recidence_city" name="recidence_city" placeholder="City of Residence"
+                                                                            <input id="residence_city" name="recidence_city" placeholder="City of Residence"
                                                                                 required="" type="text" value="">
                                                                         </div>
                                                                     </div>
-                                                                </div> <br>
-                                        
+                                                                </div> <br> 
+                                                               
                                         
                                                                 <h6>PARENT / GUARDIAN DETAILS</h6>
                                                                 <div class="row">
@@ -1496,7 +1503,7 @@
                                                                 <div class="row">
                                                                     <div class="col-xxl-6 col-xl-6 col-md-6">
                                                                         <div class="contact__form-input">
-                                                                            <input id="courses_option" name="courses_option" placeholder="Courses Options"
+                                                                            <input id="course_option" name="course_option" placeholder="Courses Options"
                                                                                 required="" type="text" value="">
                                                                         </div>
                                                                     </div>
@@ -1511,7 +1518,7 @@
                                                                 <div class="row">
                                                                     <div class="col-xxl-6 col-xl-6 col-md-6">
                                                                         <div class="contact__form-input">
-                                                                            <select id="possible_badget" name="possible_badget" placeholder="Possible Budget">
+                                                                            <select id="possible_budget" name="possible_budget" placeholder="Possible Budget">
                                                                                 <option value="1000 USD - 2000 USD">1000 USD - 2000 USD</option>
                                                                                 <option value="2000 USD - 3000 USD">2000 USD - 3000 USD</option>
                                                                                 <option value="3000 USD - 5000 USD">3000 USD - 5000 USD</option>
@@ -1530,15 +1537,15 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-xxl-12">
-                                                                        <div class="contact__form-input">
+                                                                    <div class="col-xl-12">
+                                                                        <div style="padding-top:10px" class="contact__form-input">
                                                                             <textarea id="study_reason" name="study_reason"
                                                                                 placeholder="Why do you want to study the particular courses? "
                                                                                 required=""></textarea>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-xxl-12">
-                                                                        <div class="contact__form-input">
+                                                                    <div   class="col-xl-12">
+                                                                        <div style="padding-top:10px" class="contact__form-input">
                                                                             <textarea id="country_reason" name="country_reason"
                                                                                 placeholder="Why do you want to go to the particular countries?"
                                                                                 required=""></textarea>
@@ -1546,7 +1553,7 @@
                                                                     </div>
                                                                 </div> <br>
                                         
-                                                                <div class="row">
+                                                                <!-- <div class="row">
                                                                     <div class="col-xxl-12">
                                                                         <div style="flex-direction: row;">
                                                                             <ul class="m-check-input" id="passport_option">
@@ -1557,9 +1564,9 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                </div><br>
+                                                                </div><br> -->
                                         
-                                                                <div class="row">
+                                                                <!-- <div class="row">
                                                                     <div class="col-xxl-12">
                                                                         <div style="flex-direction: row;">
                                                                             <ul class="m-check-input" id="feedback">
@@ -1576,19 +1583,24 @@
                                                                         </div>
                                                                     </div>
                                                                 </div><br>
+                                         -->
                                         
                                         
-                                        
-                                                                <div class="row">
-                                                                    <div class="col-xxl-12">
-                                                                        <div class="contact__btn">
-                                                                            <input class="e-btn" id="submit" name="submit" type="submit"
-                                                                                value="Submit Application">
-                                        
-                                                                        </div>
+                    
+                                                            </form>
+                                                            <div class="column">
+                                                                <div style="display:flex;align-items: center;justify-content: center;" id="loader1">
+                                                                
+                                                                </div>
+                                                                <div class="col-xxl-12">
+                                                                    <div class="contact__btn">
+                                                                        <!-- <button id="create-order-button"  class="btn btn-primary btn-block">Create</button> -->
+                                                                        <input class="e-btn " color="primary" onclick="create_application()" id="submit-application" name="submit" type="submit"
+                                                                            value="Submit Application">
+                                                            
                                                                     </div>
                                                                 </div>
-                                                            </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1600,6 +1612,7 @@
                                 </div>
 
                             </article>
+                           
 
 
                         </div><!-- #content -->
@@ -1715,7 +1728,7 @@
                                                                         data-settings="{&quot;button_width&quot;:&quot;25&quot;,&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}"
                                                                         data-widget_type="form.default">
                                                                         <div class="elementor-widget-container">
-                                                                            <form class="elementor-form" method="post"
+                                                                            <!-- <form class="elementor-form" method="post"
                                                                                 name="New Form">
                                                                                 <input type="hidden" name="post_id"
                                                                                     value="989" />
@@ -1754,7 +1767,7 @@
                                                                                         </button>
                                                                                     </div>
                                                                                 </div>
-                                                                            </form>
+                                                                            </form> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1979,7 +1992,7 @@
                                                                 data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}"
                                                                 data-widget_type="form.default">
                                                                 <div class="elementor-widget-container">
-                                                                    <form class="elementor-form" method="post"
+                                                                    <!-- <form class="elementor-form" method="post"
                                                                         name="New lead from popup">
                                                                         <input type="hidden" name="post_id"
                                                                             value="796" />
@@ -2034,7 +2047,7 @@
                                                                                 </button>
                                                                             </div>
                                                                         </div>
-                                                                    </form>
+                                                                    </form> -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2126,6 +2139,17 @@
         id='preloaded-modules-js'></script>
     <script src='wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min5aed.js?ver=3.6.4'
         id='e-sticky-js'></script>
+
+        <!-- custom js	 -->
+        <!-- custom js -->
+        <script src="application.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
 </body>
 
 <!-- Mirrored from mapleeducation.ca/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 May 2022 21:10:20 GMT -->
