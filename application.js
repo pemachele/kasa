@@ -8,6 +8,7 @@ function create_application() {
   $("#application-form").submit(function (e) {
     e.preventDefault();
   });
+
   var dataObject = {
       code: 117,
       api: 150,
