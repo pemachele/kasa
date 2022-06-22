@@ -31,25 +31,25 @@ var application_page = {
         {
           data: null,
           render: function (a, t, e) {
-            return '<div>yess</div';
+            return ' " id="disable-product-icon"  ></i>';
           },
         },
       ],
       initComplete: function (b, s) {
-        // $(".disable_product").on("click", function () {
-        //   var selected_row;
-        //   //taking selected row
-        //   selected_row = $(this).parents("tr:first");
+        $(".disable_product").on("click", function () {
+          var selected_row;
+          //taking selected row
+          selected_row = $(this).parents("tr:first");
 
-        //   // $('table#datatabletr#'+table_id).remove();
+          // $('table#datatabletr#'+table_id).remove();
 
-        //   //taking row data
-        //   product_row_data = product_table.row(selected_row).data();
-        //   //assigning the selected row attribute id
-        //   $(selected_row).attr("id", product_row_data.product_id);
+          //taking row data
+          product_row_data = product_table.row(selected_row).data();
+          //assigning the selected row attribute id
+          $(selected_row).attr("id", product_row_data.product_id);
 
-        //   $("#disable-product-modal").modal("show");
-        // });
+          $("#disable-product-modal").modal("show");
+        });
       },
     });
   },
