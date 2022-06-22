@@ -47,6 +47,7 @@
                             <th>Intake</th>
                             <th>Course option</th>
                             <th>Status</th>
+                            <th>Registered</th>
                             <!-- <th>Action</th> -->
                         </tr>
                     </thead>
@@ -92,6 +93,7 @@
                             return  a==="pending"?  `<div style="text-align:center; border-radius:5px; background:yellow" >${a}</div>`: `<div style="text-align:center; border-radius:5px; background:green;" >${a}</div>`;
                         },
                     },
+                    { data: "registered" },
                     // {
                     //     data: null,
                     //     render: function (a, t, e) {
