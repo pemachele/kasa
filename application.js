@@ -2,7 +2,7 @@ const thePath = window.location.href;
 // const path = thePath.substring(thePath.lastIndexOf("/") + 1);
 
 const API =
-  "http://ec2-13-58-137-105.us-east-2.compute.amazonaws.com/SACA/index.php/API";
+  "http://mobile.saca.agency/SACA/index.php/API";
 
 function create_application() {
   $("#application-form").submit(function (e) {
