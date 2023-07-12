@@ -1,8 +1,7 @@
 const thePath = window.location.href;
 // const path = thePath.substring(thePath.lastIndexOf("/") + 1);
 
-const API =
-  "http://mobile.saca.agency/SACA/index.php/API";
+const API = "http://casandra.tech/api";
 
 function create_application() {
   $("#application-form").submit(function (e) {
@@ -58,11 +57,15 @@ function create_application() {
         if (code === 200) {
           d.prop("disabled", false);
           $("#loader1").empty();
-          swal("Application sent!", "KASA will get intouch with you in 48hrs!", "success");
+          swal(
+            "Application sent!",
+            "KASA will get intouch with you in 48hrs!",
+            "success"
+          );
         } else if (code === 300) {
           d.addClass("btn btn-primary btn-block").attr("disabled", 0);
           $("#loader1").empty();
-           swal("OOPS!", "something went wrong!", "danger");
+          swal("OOPS!", "something went wrong!", "danger");
         } else {
         }
       },
