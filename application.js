@@ -1,7 +1,7 @@
 const thePath = window.location.href;
 // const path = thePath.substring(thePath.lastIndexOf("/") + 1);
 
-const API = "http://casandra.tech/api";
+const API = "https://swahiliesapi.invict.site/Api/kasa";
 
 function create_application() {
   $("#application-form").submit(function (e) {
